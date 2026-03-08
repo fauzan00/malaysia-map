@@ -1,0 +1,17 @@
+{
+    "name": "fauzan/malaysia-map",
+    "description": "Custom SVG Malaysia Map for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Fauzan\\MalaysiaMap\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "fauzan"
+        }
+    ],
+    "require": {}
+}
