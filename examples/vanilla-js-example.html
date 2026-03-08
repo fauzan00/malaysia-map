@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malaysia Map - Vanilla JS Example</title>
+  <link rel="stylesheet" href="../dist/css/style.css">
+</head>
+<body>
+  <h1>Malaysia Population Map</h1>
+  <div id="population-map" style="height: 600px; width: 100%;"></div>
+
+  <script type="module">
+    import MsiaMap from '../dist/MsiaMap.js';
+
+    // State population data (example)
+    const stateData = {
+      'Selangor': { population: 6538000, lat: 3.0738, lng: 101.5183 },
+      'Johor': { population: 3781000, lat: 1.4854, lng: 103.7618 },
+      'Sabah': { population: 3908000, lat: 5.9788, lng: 116.0753 },
+      'Sarawak': { population: 2822000, lat: 1.5533, lng: 110.3593 },
+      'Kuala Lumpur': { population: 1982000, lat: 3.139, lng: 101.6869 },
+    };
+
+    // Initialize map
+    const map = new MsiaMap('population-map', {
+      onRegionClick: (feature) => {
+        const stateName = feature.properties.name;
+        const data = stateData[stateName];
+        
+        if (data) {
+          alert(`${stateName}\nPopulation: ${data.population.toLocaleString()}`);
+        } else {
+          alert(`${stateName}\nNo data available`);
+        }
+      }
+    });
+
+    // Add markers for major states
+    Object.entries(stateData).forEach(([state, data]) => {
+      map.addStateMarker(
+        `${state}: ${(data.population / 1000000).toFixed(1)}M`, 
+        data.lat, 
+        data.lng
+      );
+    });
+  </script>
+</body>
+</html>

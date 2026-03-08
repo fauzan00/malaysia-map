@@ -1,0 +1,9 @@
+node_modules/
+vendor/
+.history/
+dist/
+*.log
+.DS_Store
+.env
+composer.lock
+package-lock.json

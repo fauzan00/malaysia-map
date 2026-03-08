@@ -1,12 +1,25 @@
 {
   "name": "malaysia-map",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Interactive SVG-based Malaysia map library for data visualization",
+  "type": "module",
+  "main": "dist/MsiaMap.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "preview": "php -S localhost:3000"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "malaysia",
+    "map",
+    "svg",
+    "visualization",
+    "geojson",
+    "laravel"
+  ],
+  "author": "fauzan",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
 }

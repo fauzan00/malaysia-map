@@ -1,0 +1,33 @@
+.vectormap-container {
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  background: #f8f9fa;
+}
+
+.vectormap-container:active {
+  cursor: grabbing;
+}
+
+.vectormap-svg {
+  display: block;
+}
+
+.vectormap-region {
+  fill: #e8eef4;
+  stroke: #5a8fc4;
+  stroke-width: 1;
+  transition: fill 0.2s;
+}
+
+.vectormap-region:hover,
+.vectormap-region-hover {
+  fill: #c5d9ed;
+}
+
+.vectormap-marker-dot {
+  fill: #d32f2f;
+  stroke: #fff;
+  stroke-width: 2;
+  cursor: pointer;
+}

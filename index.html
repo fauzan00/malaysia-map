@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malaysia Map - Test</title>
+  <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+  <h1>Malaysia Map Test</h1>
+  <div id="my-map" style="height: 500px; width: 100%;"></div>
+
+  <script type="module">
+    import MsiaMap from './dist/MsiaMap.js';
+
+    const map = new MsiaMap('my-map', {
+      onRegionClick: (feature) => alert(`Clicked: ${feature.properties.name}`)
+    });
+
+    map.addStateMarker('Kuala Lumpur', 3.139, 101.6869);
+  </script>
+</body>
+</html>
